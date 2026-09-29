@@ -14,7 +14,7 @@
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230D0D0D'/%3E%3Cpath d='M6 12c3-5 17-5 20 0-1 9-6 14-10 14S7 21 6 12z' fill='%23FF7518'/%3E%3Cpath d='M10 14l4 1-4 2zM22 14l-4 1 4 2z' fill='%230D0D0D'/%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;800&family=Creepster&family=Inter:wght@400;500;600;700;800&family=Caveat:wght@600&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Cinzel+Decorative:wght@700;900&family=Cinzel:wght@600;700;800;900&family=Creepster&family=Inter:wght@400;500;600;700;800&display=swap">
   <link rel="preload" as="image" href="img/hero.webp" fetchpriority="high">
   <link rel="stylesheet" href="styles.css">
   <script type="application/ld+json">
@@ -38,9 +38,20 @@
 
   <!-- Promo Top Bar -->
   <div class="promo" role="region" aria-label="Offre en cours">
-    <span><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align:middle;margin-right:4px"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> Offre de lancement exclusive : <b>-10 %</b> dès 20 000 FCFA avec le code</span>
-    <button data-copy="BOO10" aria-label="Copier le code promo BOO10">BOO10</button>
-    <span>· <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align:middle;margin-right:4px"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg> Identifiez votre part d'ombre pour débloquer -15 %</span>
+    <div class="promo-inner">
+      <span>
+        <svg class="svg-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>
+        Offre de lancement : <b>-10 %</b> dès 20 000 FCFA avec
+      </span>
+      <button data-copy="BOO10" aria-label="Copier le code promo BOO10">
+        <svg class="svg-icon" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+        <span>BOO10</span>
+      </button>
+      <span>·
+        <svg class="svg-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+        Faites le quiz pour révéler <b>-15 %</b>
+      </span>
+    </div>
   </div>
 
   <!-- Header -->
@@ -55,19 +66,98 @@
         </svg>
         <span>Nuit des <b style="color:var(--acc)">Masques</b></span>
       </a>
+
+      <!-- Desktop Navigation with Icons -->
       <nav class="nav" aria-label="Navigation principale">
-        <a href="#/">Accueil</a>
-        <a href="#/boutique">Toute la boutique</a>
-        <a href="#/boutique/masques">Masques</a>
-        <a href="#/boutique/looks">Looks complets</a>
+        <a href="#/">
+          <svg class="svg-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          <span>Accueil</span>
+        </a>
+        <a href="#/boutique">
+          <svg class="svg-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+          <span>Toute la boutique</span>
+        </a>
+        <a href="#/boutique/masques">
+          <svg class="svg-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 10c1.5-4 5-6 10-6s8.5 2 10 6c-.5 6-4 10-10 10S2.5 16 2 10Z"/><circle cx="8" cy="11" r="2"/><circle cx="16" cy="11" r="2"/></svg>
+          <span>Masques</span>
+        </a>
+        <a href="#/boutique/looks">
+          <svg class="svg-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <span>Looks complets</span>
+        </a>
       </nav>
-      <button class="cart-btn" data-open-cart aria-label="Ouvrir le panier">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:20px;height:20px"><path d="M5 8h14l-1 13H6z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg>
-        <span>Panier</span>
-        <span class="cart-count">0</span>
-      </button>
+
+      <!-- Header Action Controls -->
+      <div class="hdr-actions">
+        <button class="cart-btn" data-open-cart aria-label="Ouvrir le panier">
+          <svg class="svg-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 8h14l-1 13H6z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg>
+          <span>Panier</span>
+          <span class="cart-count">0</span>
+        </button>
+
+        <button class="menu-toggle" id="menu-toggle" aria-label="Menu de navigation" aria-expanded="false">
+          <svg class="svg-icon" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+      </div>
     </div>
   </header>
+
+  <!-- Mobile Navigation Drawer -->
+  <div class="mobile-nav" id="mobile-nav" role="dialog" aria-modal="true" aria-label="Navigation mobile">
+    <div class="mobile-nav-backdrop" id="mobile-nav-backdrop"></div>
+    <div class="mobile-nav-content">
+      <div class="mobile-nav-header">
+        <a class="logo" href="#/" id="mobile-logo-link">
+          <svg viewBox="0 0 40 40" aria-hidden="true" width="28" height="28">
+            <path d="M6 15c4-8 24-8 28 0-1.5 13-8.5 20-14 20S7.5 28 6 15z" fill="var(--acc)"/>
+            <path d="M11 17.5l6 1.5-6 3zM29 17.5l-6 1.5 6 3z" fill="#0D0D0D"/>
+          </svg>
+          <span>Nuit des <b style="color:var(--acc)">Masques</b></span>
+        </a>
+        <button class="x" id="mobile-nav-close" aria-label="Fermer le menu">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </div>
+
+      <nav class="mobile-nav-links">
+        <a class="mobile-nav-link" href="#/">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          <span>Accueil</span>
+        </a>
+        <a class="mobile-nav-link" href="#/boutique">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+          <span>Toute la boutique</span>
+        </a>
+        <a class="mobile-nav-link" href="#/boutique/masques">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 10c1.5-4 5-6 10-6s8.5 2 10 6c-.5 6-4 10-10 10S2.5 16 2 10Z"/><circle cx="8" cy="11" r="2"/><circle cx="16" cy="11" r="2"/></svg>
+          <span>Masques sculptés</span>
+        </a>
+        <a class="mobile-nav-link" href="#/boutique/costumes">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.38 3.46 16 2a4 4 0 0 1-8 0L3.62 3.46a2 2 0 0 0-1.34 2.23l.58 3.47a1 1 0 0 0 .99.84H6v10c0 1.1.9 2 2 2h8a2 2 0 0 0 2-2V10h2.15a1 1 0 0 0 .99-.84l.58-3.47a2 2 0 0 0-1.34-2.23z"/></svg>
+          <span>Capes &amp; Costumes</span>
+        </a>
+        <a class="mobile-nav-link" href="#/boutique/maquillage">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9.06 11.9 8.07-8.06a2.85 2.85 0 1 1 4.03 4.03l-8.06 8.08"/><path d="M7.07 14.94c-1.66 0-3 1.35-3 3.02 0 1.33-2.5 1.52-2 2.02 1.08 1.1 2.49 2.02 4 2.02 2.2 0 4-1.8 4-4.04a3.01 3.01 0 0 0-3-3.02z"/></svg>
+          <span>Maquillage FX</span>
+        </a>
+        <a class="mobile-nav-link" href="#/boutique/looks">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <span>Packs &amp; Looks complets</span>
+        </a>
+        <a class="mobile-nav-link" href="#faq">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+          <span>Questions &amp; Délais</span>
+        </a>
+      </nav>
+
+      <div style="margin-top:auto;padding-top:1.5rem">
+        <button class="btn btn-acc btn-block" data-open-cart style="gap:0.6rem">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 8h14l-1 13H6z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg>
+          <span>Voir le Panier (<span class="cart-count" style="display:inline">0</span>)</span>
+        </button>
+      </div>
+    </div>
+  </div>
 
   <main id="main">
     <!-- HOME VIEW -->
@@ -77,42 +167,66 @@
         <img class="hero-img" src="img/hero.webp" alt="Femme portant un masque Mami Wata aux écailles irisées et une cape indigo, dans la brume" width="1600" height="900" fetchpriority="high">
         <div class="hero-dark" aria-hidden="true"></div>
         <div class="wrap hero-in">
-          <span class="eyebrow">Collection Halloween 2026 · Faite main à Cotonou</span>
-          <h1 id="hero-title" class="flicker glitch-hover">Révélez votre <span class="creep handwritten typing" id="typing-text">masque</span>.</h1>
-          <p class="lead">Derrière chaque visage se cache un conte inachevé. Nos créations afro-fantastiques ne servent pas à se cacher, mais à libérer votre véritable essence. Soyez mémorable, soyez l'énigme de la nuit.</p>
+          <span class="eyebrow">
+            <svg class="svg-icon" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2c-.5 1.5-2 3-2 5a2 2 0 0 0 4 0c0-2-1.5-3.5-2-5z"/><rect x="8" y="9" width="8" height="13" rx="1"/></svg>
+            Collection Halloween 2026 · Faite main à Cotonou
+          </span>
+
+          <!-- Horror Calligraphy Typewriter Micro-Animation -->
+          <h1 id="hero-title" class="flicker glitch-hover">
+            Révélez votre <span class="horror-calligraphy-wrapper"><span class="horror-typewriter" id="horror-typewriter">masque maudit</span><span class="horror-cursor" aria-hidden="true"></span></span>.
+          </h1>
+
+          <p class="lead">Derrière chaque visage se cache un conte inachevé. Nos créations afro-fantastiques ne servent pas à se cacher, mais à libérer votre véritable essence. Soyez mémorable, devenez l'énigme de la nuit.</p>
+
           <div class="hero-cta">
-            <a class="btn btn-acc" href="#/boutique/masques">Trouver mon masque</a>
-            <a class="btn btn-ghost" href="#looks">Voir les looks complets</a>
+            <a class="btn btn-acc" href="#/boutique/masques">
+              <svg class="svg-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 10c1.5-4 5-6 10-6s8.5 2 10 6c-.5 6-4 10-10 10S2.5 16 2 10Z"/><circle cx="8" cy="11" r="2"/><circle cx="16" cy="11" r="2"/></svg>
+              <span>Trouver mon masque</span>
+            </a>
+            <a class="btn btn-ghost" href="#looks">
+              <svg class="svg-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <span>Voir les looks complets</span>
+            </a>
           </div>
+
           <div class="hero-cd">
-            <span class="cd-label" data-cd-label>Temps restant avant le samedi 31 octobre :</span>
+            <span class="cd-label" data-cd-label>
+              <svg class="svg-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              Temps restant avant le samedi 31 octobre :
+            </span>
             <div class="cd" data-cd></div>
           </div>
-          <p class="hint" aria-hidden="true">💡 Bougez la souris ou touchez l'écran : le halo de lumière vous suit.</p>
+
+          <p class="hint" aria-hidden="true">
+            <svg class="svg-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2c-.5 1.5-2 3-2 5a2 2 0 0 0 4 0c0-2-1.5-3.5-2-5z"/><rect x="8" y="9" width="8" height="13" rx="1"/></svg>
+            <span>Bougez la souris ou touchez l'écran : le halo de lumière vous suit.</span>
+          </p>
         </div>
+
         <!-- Bat elements -->
-        <div class="bat" style="top:10%; left:-10%"><svg viewBox="0 0 24 24" width="40" height="40" fill="currentColor"><path d="M12 4.5C11 4.5 9 3 7 3C5 3 2 5 2 5C2 5 3 7 3 10C3 13 5 15 8 15C10 15 11 14 12 13C13 14 14 15 16 15C19 15 21 13 21 10C21 7 22 5 22 5C22 5 19 3 17 3C15 3 13 4.5 12 4.5Z"/></svg></div>
-        <div class="bat" style="top:25%; left:-20%; animation-delay: 4s"><svg viewBox="0 0 24 24" width="30" height="30" fill="currentColor"><path d="M12 4.5C11 4.5 9 3 7 3C5 3 2 5 2 5C2 5 3 7 3 10C3 13 5 15 8 15C10 15 11 14 12 13C13 14 14 15 16 15C19 15 21 13 21 10C21 7 22 5 22 5C22 5 19 3 17 3C15 3 13 4.5 12 4.5Z"/></svg></div>
-        <div class="bat" style="top:40%; left:-15%; animation-delay: 8s"><svg viewBox="0 0 24 24" width="35" height="35" fill="currentColor"><path d="M12 4.5C11 4.5 9 3 7 3C5 3 2 5 2 5C2 5 3 7 3 10C3 13 5 15 8 15C10 15 11 14 12 13C13 14 14 15 16 15C19 15 21 13 21 10C21 7 22 5 22 5C22 5 19 3 17 3C15 3 13 4.5 12 4.5Z"/></svg></div>
+        <div class="bat" style="top:12%; left:-10%"><svg viewBox="0 0 24 24" width="40" height="40" fill="currentColor"><path d="M12 4.5C11 4.5 9 3 7 3C5 3 2 5 2 5C2 5 3 7 3 10C3 13 5 15 8 15C10 15 11 14 12 13C13 14 14 15 16 15C19 15 21 13 21 10C21 7 22 5 22 5C22 5 19 3 17 3C15 3 13 4.5 12 4.5Z"/></svg></div>
+        <div class="bat" style="top:28%; left:-20%; animation-delay: 4s"><svg viewBox="0 0 24 24" width="30" height="30" fill="currentColor"><path d="M12 4.5C11 4.5 9 3 7 3C5 3 2 5 2 5C2 5 3 7 3 10C3 13 5 15 8 15C10 15 11 14 12 13C13 14 14 15 16 15C19 15 21 13 21 10C21 7 22 5 22 5C22 5 19 3 17 3C15 3 13 4.5 12 4.5Z"/></svg></div>
+        <div class="bat" style="top:42%; left:-15%; animation-delay: 8s"><svg viewBox="0 0 24 24" width="35" height="35" fill="currentColor"><path d="M12 4.5C11 4.5 9 3 7 3C5 3 2 5 2 5C2 5 3 7 3 10C3 13 5 15 8 15C10 15 11 14 12 13C13 14 14 15 16 15C19 15 21 13 21 10C21 7 22 5 22 5C22 5 19 3 17 3C15 3 13 4.5 12 4.5Z"/></svg></div>
       </section>
 
-      <!-- Trust Badges -->
+      <!-- Trust Badges with SVG Icons -->
       <section class="trust-band">
         <div class="wrap trust">
-          <div>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7"/><circle cx="7" cy="18" r="2"/><circle cx="17" cy="18" r="2"/></svg>
+          <div class="trust-item">
+            <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
             <span><b>Livré en 24 h à Cotonou</b>Commandez avant le 28/10 pour Halloween</span>
           </div>
-          <div>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.4 6.8 19.1l1-5.8L3.5 9.2l5.9-.9z"/></svg>
+          <div class="trust-item">
+            <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
             <span><b>Fait main &amp; numéroté</b>6 artisans d'art à Cotonou &amp; Abomey</span>
           </div>
-          <div>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M11 18h2"/></svg>
+          <div class="trust-item">
+            <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M11 18h2"/></svg>
             <span><b>Mobile Money &amp; Espèces</b>MTN, Moov, Wave ou à la livraison</span>
           </div>
-          <div>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/></svg>
+          <div class="trust-item">
+            <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/></svg>
             <span><b>Échange de taille gratuit</b>Sous 7 jours ou retrait à l'atelier</span>
           </div>
         </div>
@@ -123,10 +237,16 @@
         <div class="wrap">
           <div class="sec-h">
             <div>
-              <span class="eyebrow">Les pièces phares de la saison</span>
+              <span class="eyebrow">
+                <svg class="svg-icon" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 10c1.5-4 5-6 10-6s8.5 2 10 6c-.5 6-4 10-10 10S2.5 16 2 10Z"/><circle cx="8" cy="11" r="2"/><circle cx="16" cy="11" r="2"/></svg>
+                Les pièces phares de la saison
+              </span>
               <h2>Choisissez votre personnage</h2>
             </div>
-            <a class="btn btn-ghost btn-sm" href="#/boutique">Toute la boutique</a>
+            <a class="btn btn-ghost btn-sm" href="#/boutique">
+              <svg class="svg-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+              <span>Toute la boutique</span>
+            </a>
           </div>
           <div class="grid" id="featured-grid"></div>
         </div>
@@ -137,11 +257,15 @@
         <div class="wrap">
           <div class="sec-h">
             <div>
-              <span class="eyebrow">Packs économiques</span>
+              <span class="eyebrow">
+                <svg class="svg-icon" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                Packs économiques
+              </span>
               <h2>Tout le personnage, <span class="drawn-underline">moins cher</span></h2>
             </div>
-            <p class="muted" style="max-width:42ch;margin:0">Masque, cape ou maquillage FX déjà parfaitement coordonnés. Vous n'avez plus qu'à sortir.</p>
+            <p class="muted" style="max-width:42ch;margin:0">Masque, cape ou maquillage FX déjà coordonnés. Vous n'avez plus qu'à sortir dans la nuit.</p>
           </div>
+
           <div class="look-grid">
             <article class="look">
               <div class="look-img">
@@ -149,65 +273,99 @@
                 <img src="img/cape-indigo.webp" alt="Cape Nuit Indigo" loading="lazy" width="600" height="600">
               </div>
               <div class="look-b">
-                <span class="eyebrow">Look n° 1 · Mystique</span>
+                <span class="eyebrow">
+                  <svg class="svg-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                  Look n° 1 · Mystique
+                </span>
                 <h3>Esprit de la Forêt</h3>
                 <p class="muted">Masque bois sculpté + Cape Nuit Indigo teintée à la main</p>
                 <div class="price" style="margin:0.5rem 0">
-                  <strong style="font-size:1.5rem">34 900 F CFA</strong>
+                  <strong style="font-size:1.45rem">34 900 F CFA</strong>
                   <s>39 800 F CFA</s>
-                  <span class="save-badge">-4 900 FCFA</span>
+                  <span class="save-badge">
+                    <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>
+                    -4 900 FCFA
+                  </span>
                 </div>
                 <div style="margin-top:0.8rem">
-                  <a class="btn btn-acc" href="#/produit/look-foret">Composer ce look</a>
+                  <a class="btn btn-acc" href="#/produit/look-foret">
+                    <svg class="svg-icon" viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                    <span>Composer ce look</span>
+                  </a>
                 </div>
               </div>
             </article>
+
             <article class="look">
               <div class="look-img">
                 <img src="img/masque-mamiwata.webp" alt="Masque Mami Wata" loading="lazy" width="600" height="600">
                 <img src="img/kit-fx.webp" alt="Kit Maquillage FX" loading="lazy" width="600" height="600">
               </div>
               <div class="look-b">
-                <span class="eyebrow">Look n° 2 · Glamour &amp; Écailles</span>
+                <span class="eyebrow">
+                  <svg class="svg-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                  Look n° 2 · Glamour &amp; Écailles
+                </span>
                 <h3>Mami Wata</h3>
                 <p class="muted">Masque irisé aux cauris + Kit Maquillage FX peaux foncées</p>
                 <div class="price" style="margin:0.5rem 0">
-                  <strong style="font-size:1.5rem">27 900 F CFA</strong>
+                  <strong style="font-size:1.45rem">27 900 F CFA</strong>
                   <s>31 800 F CFA</s>
-                  <span class="save-badge">-3 900 FCFA</span>
+                  <span class="save-badge">
+                    <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>
+                    -3 900 FCFA
+                  </span>
                 </div>
                 <div style="margin-top:0.8rem">
-                  <a class="btn btn-acc" href="#/produit/look-mamiwata">Composer ce look</a>
+                  <a class="btn btn-acc" href="#/produit/look-mamiwata">
+                    <svg class="svg-icon" viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                    <span>Composer ce look</span>
+                  </a>
                 </div>
               </div>
             </article>
           </div>
 
-          <!-- Interactive Mask Recommender Quiz -->
+          <!-- Interactive Mask Recommender Quiz with dedicated icons -->
           <div class="quiz-box">
-            <span class="eyebrow">Le Miroir de l'Âme (30 secondes)</span>
-            <h3 style="font-size:1.6rem;margin:0.3rem 0 0.6rem">Quel archétype sommeille en vous ?</h3>
+            <span class="eyebrow">
+              <svg class="svg-icon" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m4.93 4.93 4.24 4.24"/><path d="m14.83 9.17 4.24-4.24"/><path d="m14.83 14.83 4.24 4.24"/><path d="m9.17 14.83-4.24 4.24"/></svg>
+              Le Miroir de l'Âme (30 secondes)
+            </span>
+            <h3 style="font-size:clamp(1.3rem, 3vw, 1.7rem);margin:0.3rem 0 0.6rem">Quel archétype sommeille en vous ?</h3>
             <p class="muted" style="font-size:0.95rem">Laissez votre intuition guider votre choix pour découvrir la parure qui vous est destinée :</p>
+            
             <div class="quiz-options">
               <button class="quiz-opt" data-quiz-val="masque-mamiwata">
-                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align:middle;margin-right:8px"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
-                <b>Souverain des Abysses</b><br>
-                <span style="font-size:0.8rem;color:var(--muted)">Pour ceux qui règnent par le mystère et la grâce.</span>
+                <span class="quiz-opt-h">
+                  <svg class="svg-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12c3-4 6-4 10 0 4-4 7-4 10 0"/><path d="M2 17c3-4 6-4 10 0 4-4 7-4 10 0"/></svg>
+                  <b>Souverain des Abysses</b>
+                </span>
+                <span style="font-size:0.82rem;color:var(--muted)">Pour ceux qui règnent par le mystère et la grâce.</span>
               </button>
+
               <button class="quiz-opt" data-quiz-val="masque-foret">
-                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align:middle;margin-right:8px"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
-                <b>Gardien des Murmures</b><br>
-                <span style="font-size:0.8rem;color:var(--muted)">Pour les esprits liés aux racines et aux contes oubliés.</span>
+                <span class="quiz-opt-h">
+                  <svg class="svg-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22v-7"/><path d="M12 15a7 7 0 0 0-7-7c0 4 3 7 7 7Z"/><path d="M12 15a7 7 0 0 1 7-7c0 4-3 7-7 7Z"/></svg>
+                  <b>Gardien des Murmures</b>
+                </span>
+                <span style="font-size:0.82rem;color:var(--muted)">Pour les esprits liés aux racines et aux contes oubliés.</span>
               </button>
+
               <button class="quiz-opt" data-quiz-val="cape-indigo">
-                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align:middle;margin-right:8px"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
-                <b>Ombre Solennelle</b><br>
-                <span style="font-size:0.8rem;color:var(--muted)">Pour une présence qui impose le silence sans un mot.</span>
+                <span class="quiz-opt-h">
+                  <svg class="svg-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a9 9 0 1 0 9 9c0-.46-.04-.92-.1-1.36a5.389 5.389 0 0 1-4.4 2.26 5.403 5.403 0 0 1-3.14-9.8c-.44-.06-.9-.1-1.36-.1z"/></svg>
+                  <b>Ombre Solennelle</b>
+                </span>
+                <span style="font-size:0.82rem;color:var(--muted)">Pour une présence qui impose le silence sans un mot.</span>
               </button>
+
               <button class="quiz-opt" data-quiz-val="kit-fx">
-                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align:middle;margin-right:8px"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
-                <b>L'Artiste de l'Illusion</b><br>
-                <span style="font-size:0.8rem;color:var(--muted)">Pour transformer votre peau en œuvre d'art vivant.</span>
+                <span class="quiz-opt-h">
+                  <svg class="svg-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9.06 11.9 8.07-8.06a2.85 2.85 0 1 1 4.03 4.03l-8.06 8.08"/><path d="M7.07 14.94c-1.66 0-3 1.35-3 3.02 0 1.33-2.5 1.52-2 2.02 1.08 1.1 2.49 2.02 4 2.02 2.2 0 4-1.8 4-4.04a3.01 3.01 0 0 0-3-3.02z"/></svg>
+                  <b>L'Artiste de l'Illusion</b>
+                </span>
+                <span style="font-size:0.82rem;color:var(--muted)">Pour transformer votre peau en œuvre d'art vivant.</span>
               </button>
             </div>
           </div>
@@ -218,11 +376,14 @@
       <section class="sec story">
         <div class="wrap story-in">
           <div>
-            <span class="eyebrow">Notre promesse éthique</span>
+            <span class="eyebrow">
+              <svg class="svg-icon" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m21.73 2.27-8.35 8.35a6.002 6.002 0 0 0-8.23 8.23l-3.15 3.15 1.42 1.42 3.15-3.15a6 6 0 0 0 8.23-8.23l8.35-8.35a1.5 1.5 0 0 0-2.12-2.12z"/></svg>
+              Notre promesse éthique
+            </span>
             <h2>Des contes populaires, pas des objets sacrés.</h2>
             <p>Nos masques s'inspirent des récits poétiques qu'on se raconte à la veillée : Mami Wata, les esprits gardiens de la forêt, la reine des ombres. Nous ne reproduisons jamais de masques rituels (Egungun, Zangbeto, Gèlèdè) : ils appartiennent au patrimoine sacré de leurs communautés.</p>
             <p class="muted">Chaque pièce est façonnée à la main par nos 6 artisans partenaires à Cotonou et Abomey, puis soigneusement numérotée.</p>
-            
+
             <button id="ghost-btn" class="ghost" aria-label="Un mystérieux petit fantôme… cliquez pour voir">
               <svg viewBox="0 0 40 44" aria-hidden="true">
                 <path d="M20 2C10 2 4 10 4 20v22l6-5 5 5 5-5 5 5 5-5 6 5V20C36 10 30 2 20 2z" fill="currentColor"/>
@@ -248,12 +409,15 @@
               </li>
             </ol>
 
-            <!-- Delivery Estimator Widget -->
+            <!-- Delivery Estimator Widget with Icons -->
             <div class="deliv-card">
-              <span class="eyebrow" style="font-size:0.75rem">Logistique de la Nuit</span>
-              <label for="deliv-quartier-select" style="font-weight:700;display:block;font-size:0.95rem;margin-top:0.2rem">
-                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align:middle;margin-right:4px"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                Où devons-nous porter votre parure ?
+              <span class="eyebrow" style="font-size:0.75rem">
+                <svg class="svg-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+                Logistique de la Nuit
+              </span>
+              <label for="deliv-quartier-select" style="font-weight:700;display:flex;align-items:center;gap:0.4rem;font-size:0.95rem;margin-top:0.2rem">
+                <svg class="svg-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                <span>Où devons-nous porter votre parure ?</span>
               </label>
               <select id="deliv-quartier-select" class="deliv-select">
                 <option value="Haie Vive">Cotonou – Haie Vive / Cocotiers</option>
@@ -264,67 +428,127 @@
                 <option value="calavi">Abomey-Calavi (Arconville, Bidossessi)</option>
                 <option value="portonovo">Porto-Novo &amp; Environs</option>
               </select>
-              <p id="deliv-result" style="font-size:0.88rem;color:var(--muted);margin-top:0.8rem">
-                ⚡ Délai express : <b>Livraison en 24 h chrono</b> à Haie Vive (ou retrait gratuit immédiat à l'atelier).
+              <p id="deliv-result" style="font-size:0.88rem;color:var(--muted);margin-top:0.8rem;display:flex;align-items:flex-start;gap:0.4rem">
+                <svg class="svg-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" style="color:var(--acc);margin-top:2px"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+                <span>Délai express : <b>Livraison en 24 h chrono</b> à Haie Vive (ou retrait gratuit immédiat à l'atelier).</span>
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- Verified Reviews -->
+      <!-- Verified Reviews with SVG Stars -->
       <section class="sec">
         <div class="wrap">
           <div class="sec-h">
             <div>
-              <span class="eyebrow">4,8/5 sur plus de 600 clients ravis</span>
+              <span class="eyebrow">
+                <svg class="svg-icon" viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                4,8/5 sur plus de 600 clients ravis
+              </span>
               <h2>Ils ont osé la Nuit</h2>
             </div>
           </div>
+
           <div class="reviews">
             <figure class="review">
-              <div class="stars">★★★★★ <span>5.0</span></div>
+              <div class="stars-row">
+                <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <span class="stars-count">5.0</span>
+              </div>
               <p>« Le masque Mami Wata a fait sensation à la soirée du Code Bar à Cotonou. Finitions incroyables, et je l'ai accroché au mur du salon depuis. »</p>
-              <footer>Afi K. · Cotonou (Haie Vive)</footer>
+              <footer>
+                <svg class="svg-icon" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                <span>Afi K. · Cotonou (Haie Vive)</span>
+              </footer>
             </figure>
+
             <figure class="review">
-              <div class="stars">★★★★★ <span>5.0</span></div>
+              <div class="stars-row">
+                <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <span class="stars-count">5.0</span>
+              </div>
               <p>« Le look Esprit de la Forêt est encore plus spectaculaire en vrai. Livré le lendemain à Calavi avec une carte de remerciement manuscrite. »</p>
-              <footer>Koffi M. · Abomey-Calavi</footer>
+              <footer>
+                <svg class="svg-icon" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                <span>Koffi M. · Abomey-Calavi</span>
+              </footer>
             </figure>
+
             <figure class="review">
-              <div class="stars">★★★★☆ <span>4.8</span></div>
+              <div class="stars-row">
+                <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <span class="stars-count">4.8</span>
+              </div>
               <p>« Le kit maquillage FX tient toute la nuit même quand on danse. Enfin des teintes spécialement créées pour les peaux noires. »</p>
-              <footer>Mariam T. · Porto-Novo</footer>
+              <footer>
+                <svg class="svg-icon" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                <span>Mariam T. · Porto-Novo</span>
+              </footer>
             </figure>
           </div>
         </div>
       </section>
 
-      <!-- FAQ Accordion -->
+      <!-- FAQ Accordion with SVG indicator -->
       <section class="sec" id="faq">
         <div class="wrap">
           <div class="sec-h">
             <div>
-              <span class="eyebrow">Tout savoir</span>
+              <span class="eyebrow">
+                <svg class="svg-icon" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                Tout savoir
+              </span>
               <h2>Questions fréquentes</h2>
             </div>
           </div>
           <div class="faq">
             <details open>
-              <summary>Quand dois-je commander pour être livré avant le 31 octobre 2026 ?</summary>
+              <summary>
+                <span>Quand dois-je commander pour être livré avant le 31 octobre 2026 ?</span>
+                <span class="faq-indicator" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                </span>
+              </summary>
               <p>Au plus tard le <b>mercredi 28 octobre à 18 h</b> pour Cotonou (livraison 24 h chrono), et le mardi 27 octobre pour Calavi et Porto-Novo (48 h). Retrait gratuit possible à l'atelier de Haie Vive jusqu'au samedi 31 octobre à 14 h.</p>
             </details>
             <details>
-              <summary>Comment fonctionne le paiement ?</summary>
+              <summary>
+                <span>Comment fonctionne le paiement ?</span>
+                <span class="faq-indicator" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                </span>
+              </summary>
               <p>Vous pouvez régler par <b>Mobile Money (MTN MoMo, Moov Money, Wave, Orange Money)</b> ou en <b>espèces lors de la réception</b> de votre colis après inspection devant le livreur.</p>
             </details>
             <details>
-              <summary>Et si la taille de la cape ne me convient pas ?</summary>
+              <summary>
+                <span>Et si la taille de la cape ne me convient pas ?</span>
+                <span class="faq-indicator" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                </span>
+              </summary>
               <p>L'échange de taille est <b>totalement gratuit sous 7 jours</b> (sur article non porté). Vous pouvez également essayer la cape devant notre livreur lors de la remise en main propre.</p>
             </details>
             <details>
-              <summary>Les masques sont-ils agréables à porter toute la soirée ?</summary>
+              <summary>
+                <span>Les masques sont-ils agréables à porter toute la soirée ?</span>
+                <span class="faq-indicator" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                </span>
+              </summary>
               <p>Absolument : chaque masque pèse moins de 180 g, intègre une doublure douce en coton au niveau du front et des ouvertures généreuses pour assurer une vision nette et une respiration fluide.</p>
             </details>
           </div>
@@ -337,7 +561,10 @@
           <h2 style="font-size:clamp(2.2rem, 5vw, 3.8rem);margin:0">La nuit n'attend pas.</h2>
           <p class="muted" style="max-width:45ch">Pièces artisanales limitées. Réservez votre look avant l'épuisement des stocks.</p>
           <div class="cd" data-cd></div>
-          <a class="btn btn-acc" href="#/boutique" style="margin-top:0.5rem">Explorer toute la collection</a>
+          <a class="btn btn-acc" href="#/boutique" style="margin-top:0.5rem">
+            <svg class="svg-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+            <span>Explorer toute la collection</span>
+          </a>
         </div>
       </section>
     </div>
@@ -347,11 +574,17 @@
       <section class="sec" style="padding:2.5rem 0 1rem">
         <div class="wrap">
           <nav class="crumbs" aria-label="Fil d'Ariane">
-            <a href="#/">Accueil</a> / <span aria-current="page">Boutique</span>
+            <a href="#/">
+              <svg class="svg-icon" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+              <span>Accueil</span>
+            </a>
+            <svg class="svg-icon" viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+            <span aria-current="page">Boutique</span>
           </nav>
+
           <h1>La Boutique de la Nuit</h1>
           <p class="muted" style="max-width:65ch">Masques d'art, capes indigo, kits FX et déco ajourée : tout pour célébrer Halloween avec élégance à Cotonou.</p>
-          
+
           <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;margin:2rem 0 1.5rem">
             <div class="chips" id="shop-chips" role="group" aria-label="Filtrer par catégorie"></div>
             <div style="display:flex;align-items:center;gap:0.8rem">
@@ -382,8 +615,13 @@
   <div class="overlay" data-close></div>
   <aside class="drawer" aria-hidden="true" aria-label="Panier d'achat" role="dialog">
     <div class="drawer-h">
-      <h2>Votre Panier</h2>
-      <button class="x" data-close aria-label="Fermer le panier">×</button>
+      <h2>
+        <svg class="svg-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 8h14l-1 13H6z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg>
+        <span>Votre Panier</span>
+      </h2>
+      <button class="x" data-close aria-label="Fermer le panier">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
     </div>
     <div class="drawer-b"></div>
     <div class="drawer-f"></div>
@@ -403,11 +641,10 @@
       <div class="ftr-grid">
         <div>
           <a class="logo" href="#/">
-            <svg viewBox="0 0 40 40" aria-hidden="true">
+            <svg viewBox="0 0 40 40" aria-hidden="true" width="30" height="30">
               <path d="M6 15c4-8 24-8 28 0-1.5 13-8.5 20-14 20S7.5 28 6 15z" fill="var(--acc)"/>
               <path d="M11 17.5l6 1.5-6 3zM29 17.5l-6 1.5 6 3z" fill="#0D0D0D"/>
               <path d="M16 28c2.5 1.5 5.5 1.5 8 0" stroke="#0D0D0D" stroke-width="2" fill="none" stroke-linecap="round"/>
-              <circle cx="20" cy="9" r="2" fill="var(--sec-light)"/>
             </svg>
             <span>Nuit des <b style="color:var(--acc)">Masques</b></span>
           </a>
@@ -416,19 +653,59 @@
         <div>
           <h4>Boutique</h4>
           <ul>
-            <li><a href="#/boutique/masques">Masques sculptés</a></li>
-            <li><a href="#/boutique/costumes">Capes indigo</a></li>
-            <li><a href="#/boutique/maquillage">Maquillage FX</a></li>
-            <li><a href="#/boutique/looks">Looks complets</a></li>
+            <li>
+              <a href="#/boutique/masques">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+                <span>Masques sculptés</span>
+              </a>
+            </li>
+            <li>
+              <a href="#/boutique/costumes">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+                <span>Capes indigo</span>
+              </a>
+            </li>
+            <li>
+              <a href="#/boutique/maquillage">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+                <span>Maquillage FX</span>
+              </a>
+            </li>
+            <li>
+              <a href="#/boutique/looks">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+                <span>Looks complets</span>
+              </a>
+            </li>
           </ul>
         </div>
         <div>
           <h4>Aide &amp; Livraison</h4>
           <ul>
-            <li><a href="#faq">Questions fréquentes</a></li>
-            <li><a href="#faq">Délais &amp; Tarifs</a></li>
-            <li><a href="#faq">Échange de taille</a></li>
-            <li><a href="https://wa.me/?text=Nuit%20des%20Masques" target="_blank" rel="noopener">Contact WhatsApp</a></li>
+            <li>
+              <a href="#faq">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+                <span>Questions fréquentes</span>
+              </a>
+            </li>
+            <li>
+              <a href="#faq">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+                <span>Délais &amp; Tarifs</span>
+              </a>
+            </li>
+            <li>
+              <a href="#faq">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+                <span>Échange de taille</span>
+              </a>
+            </li>
+            <li>
+              <a href="https://wa.me/?text=Nuit%20des%20Masques" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+                <span>Contact WhatsApp</span>
+              </a>
+            </li>
           </ul>
         </div>
         <div>
@@ -437,7 +714,9 @@
           <form class="news" onsubmit="event.preventDefault();Q4.toast('Inscription confirmée ! Votre code BOO10 est actif.');this.reset();">
             <label class="sr" for="nl-email">Votre adresse e-mail</label>
             <input id="nl-email" type="email" placeholder="votre@email.com" required>
-            <button class="btn btn-acc btn-sm">Rejoindre</button>
+            <button class="btn btn-acc btn-sm" aria-label="S'inscrire">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+            </button>
           </form>
         </div>
       </div>
