@@ -367,7 +367,94 @@ p:last-child { margin-bottom: 0; }
 }
 .flicker { animation: flicker 5s infinite; }
 
-/* Hero Bat Elements */
+/* Hero Bat Elements & Dynamic Scroll Bat Sky */
+.bat-sky {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 75;
+  overflow: hidden;
+}
+
+.scroll-bat {
+  position: absolute;
+  pointer-events: none;
+  z-index: 75;
+  color: #1a1222;
+  filter: drop-shadow(0 0 8px rgba(255, 117, 24, 0.55)) drop-shadow(0 0 15px rgba(91, 42, 134, 0.7));
+  will-change: transform, opacity;
+}
+
+.scroll-bat-wings {
+  display: block;
+  animation: batWingFlap 0.24s ease-in-out infinite alternate;
+  transform-origin: center;
+}
+
+@keyframes batWingFlap {
+  0% { transform: scaleY(1) rotate(0deg); }
+  50% { transform: scaleY(0.2) rotate(4deg); }
+  100% { transform: scaleY(0.95) rotate(-4deg); }
+}
+
+@keyframes batSwoopL2R {
+  0% {
+    transform: translate3d(-100px, 0, 0) scale(0.65) rotate(16deg);
+    opacity: 0;
+  }
+  15% {
+    opacity: 0.95;
+    transform: translate3d(20vw, 25px, 0) scale(0.95) rotate(-6deg);
+  }
+  50% {
+    transform: translate3d(52vw, -25px, 0) scale(1.15) rotate(10deg);
+    opacity: 1;
+  }
+  80% {
+    opacity: 0.9;
+    transform: translate3d(85vw, 15px, 0) scale(0.9) rotate(-8deg);
+  }
+  100% {
+    transform: translate3d(calc(100vw + 120px), -15px, 0) scale(0.7) rotate(12deg);
+    opacity: 0;
+  }
+}
+
+@keyframes batSwoopR2L {
+  0% {
+    transform: translate3d(calc(100vw + 100px), 0, 0) scale(0.65) rotate(-16deg);
+    opacity: 0;
+  }
+  15% {
+    opacity: 0.95;
+    transform: translate3d(80vw, -25px, 0) scale(0.95) rotate(6deg);
+  }
+  50% {
+    transform: translate3d(48vw, 30px, 0) scale(1.15) rotate(-10deg);
+    opacity: 1;
+  }
+  80% {
+    opacity: 0.9;
+    transform: translate3d(15vw, -15px, 0) scale(0.9) rotate(8deg);
+  }
+  100% {
+    transform: translate3d(-120px, 15px, 0) scale(0.7) rotate(-12deg);
+    opacity: 0;
+  }
+}
+
+.bat-fly-l2r {
+  animation: batSwoopL2R var(--flight-dur, 3.8s) cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+.bat-fly-r2l {
+  animation: batSwoopR2L var(--flight-dur, 3.8s) cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+.sec-h, .hero-in, .story-in, .quiz-box {
+  position: relative;
+}
+
 .bat {
   position: absolute;
   pointer-events: none;

@@ -895,6 +895,126 @@
   window.Q4 = { fcfa, pct, esc, P, toast, addToCart, openCart, openModal, ICONS };
 
   // ========================================================
+  // BATS FLIGHT MICRO-ANIMATIONS ACROSS TEXTS ON SCROLL
+  // ========================================================
+  function initBatFlightOnTextScroll() {
+    const sky = $('#bat-sky');
+    if (!sky) return;
+
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+    let batCount = 0;
+    const maxActiveBats = 6;
+
+    function spawnBatAcross(yPercent, direction = null) {
+      if (batCount >= maxActiveBats) return;
+      batCount++;
+
+      const dir = direction || (Math.random() > 0.5 ? 'l2r' : 'r2l');
+      const size = Math.floor(32 + Math.random() * 24);
+      const duration = (3.2 + Math.random() * 1.6).toFixed(2);
+      const jitterY = (Math.random() * 8 - 4).toFixed(1);
+      const topPos = Math.max(8, Math.min(88, Number(yPercent) + Number(jitterY)));
+
+      const batEl = document.createElement('div');
+      batEl.className = `scroll-bat bat-fly-${dir}`;
+      batEl.style.top = `${topPos}%`;
+      batEl.style.setProperty('--flight-dur', `${duration}s`);
+      batEl.style.width = `${size}px`;
+
+      batEl.innerHTML = `
+        <div class="scroll-bat-wings">
+          <svg viewBox="0 0 32 18" width="${size}" height="${Math.round(size * 0.56)}" fill="currentColor" aria-hidden="true">
+            <path d="M16 8c-1.5-2.5-4-5-8-5-3.5 0-6 2.5-7 4 0 0 1.5 5 5 5 1.5 0 3-.8 4-2-1 3 0 6 3 7 1 .3 2-.2 3-1 1 .8 2 1.3 3 1 3-1 4-4 3-7 1 1.2 2.5 2 4 2 3.5 0 5-5 5-5-1-1.5-3.5-4-7-4-4 0-6.5 2.5-8 5z"/>
+            <circle cx="14.8" cy="6" r="0.75" fill="#FF7518"/>
+            <circle cx="17.2" cy="6" r="0.75" fill="#FF7518"/>
+          </svg>
+        </div>
+      `;
+
+      sky.appendChild(batEl);
+
+      const cleanup = () => {
+        if (batEl.parentNode) batEl.remove();
+        batCount = Math.max(0, batCount - 1);
+      };
+
+      batEl.addEventListener('animationend', cleanup, { once: true });
+      setTimeout(cleanup, (Number(duration) + 0.3) * 1000);
+    }
+
+    function sendFlockAcross(yPercent, count = 2) {
+      const dir = Math.random() > 0.5 ? 'l2r' : 'r2l';
+      for (let i = 0; i < count; i++) {
+        setTimeout(() => {
+          spawnBatAcross(yPercent, dir);
+        }, i * (220 + Math.random() * 200));
+      }
+    }
+
+    const headingSelector = 'h1, .sec-h h2, .look-b h3, .quiz-box h3, .story-in h2, .faq h2';
+    const textObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const rect = entry.target.getBoundingClientRect();
+          const yPct = ((rect.top + rect.height / 2) / window.innerHeight) * 100;
+          sendFlockAcross(yPct, Math.random() > 0.4 ? 2 : 3);
+        }
+      });
+    }, {
+      rootMargin: '0px 0px -15% 0px',
+      threshold: 0.2
+    });
+
+    const observeHeadings = () => {
+      $$(headingSelector).forEach(h => textObserver.observe(h));
+    };
+    observeHeadings();
+
+    window.addEventListener('hashchange', () => {
+      setTimeout(observeHeadings, 150);
+    });
+
+    let lastScroll = window.scrollY;
+    let scrollAccumulator = 0;
+    let isTicking = false;
+
+    window.addEventListener('scroll', () => {
+      if (!isTicking) {
+        window.requestAnimationFrame(() => {
+          const currentScroll = window.scrollY;
+          const diff = Math.abs(currentScroll - lastScroll);
+          scrollAccumulator += diff;
+          lastScroll = currentScroll;
+
+          if (scrollAccumulator > 380) {
+            scrollAccumulator = 0;
+            const midYPct = 25 + Math.random() * 50;
+            spawnBatAcross(midYPct);
+          }
+          isTicking = false;
+        });
+        isTicking = true;
+      }
+    }, { passive: true });
+
+    document.addEventListener('mouseover', e => {
+      const heading = e.target.closest('h1, h2, h3');
+      if (heading && !heading._batTriggered) {
+        heading._batTriggered = true;
+        const rect = heading.getBoundingClientRect();
+        const yPct = ((rect.top + rect.height / 2) / window.innerHeight) * 100;
+        sendFlockAcross(yPct, 1);
+        setTimeout(() => { heading._batTriggered = false; }, 4000);
+      }
+    });
+
+    setTimeout(() => {
+      sendFlockAcross(35, 2);
+    }, 1200);
+  }
+
+  // ========================================================
   // HORROR CALLIGRAPHY TYPEWRITER MICRO-ANIMATION
   // ========================================================
   function initHorrorCalligraphyTypewriter() {
@@ -955,6 +1075,7 @@
   window.addEventListener('hashchange', route);
   initHeroFlashlight();
   initHorrorCalligraphyTypewriter();
+  initBatFlightOnTextScroll();
   tickCountdown();
   setInterval(tickCountdown, 1000);
   renderCart();
