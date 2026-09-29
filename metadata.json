@@ -1,0 +1,7 @@
+{
+  "name": "Nuit des Masques",
+  "description": "Masques et costumes Halloween afro-fantastiques faits main à Cotonou. Looks complets dès 27 900 FCFA, livraison 24 h, paiement Mobile Money.",
+  "capabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
