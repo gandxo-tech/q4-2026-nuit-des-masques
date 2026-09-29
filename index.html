@@ -14,7 +14,7 @@
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230D0D0D'/%3E%3Cpath d='M6 12c3-5 17-5 20 0-1 9-6 14-10 14S7 21 6 12z' fill='%23FF7518'/%3E%3Cpath d='M10 14l4 1-4 2zM22 14l-4 1 4 2z' fill='%230D0D0D'/%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;800&family=Creepster&family=Inter:wght@400;500;600;700;800&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;800&family=Creepster&family=Inter:wght@400;500;600;700;800&family=Caveat:wght@600&display=swap">
   <link rel="preload" as="image" href="img/hero.webp" fetchpriority="high">
   <link rel="stylesheet" href="styles.css">
   <script type="application/ld+json">
@@ -38,9 +38,9 @@
 
   <!-- Promo Top Bar -->
   <div class="promo" role="region" aria-label="Offre en cours">
-    <span>🎃 Offre de lancement Halloween : <b>-10 %</b> dès 20 000 FCFA avec le code</span>
+    <span><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align:middle;margin-right:4px"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> Offre de lancement exclusive : <b>-10 %</b> dès 20 000 FCFA avec le code</span>
     <button data-copy="BOO10" aria-label="Copier le code promo BOO10">BOO10</button>
-    <span>· Trouvez le fantôme caché sur la page pour -15 %</span>
+    <span>· <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align:middle;margin-right:4px"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg> Identifiez votre part d'ombre pour débloquer -15 %</span>
   </div>
 
   <!-- Header -->
@@ -61,11 +61,16 @@
         <a href="#/boutique/masques">Masques</a>
         <a href="#/boutique/looks">Looks complets</a>
       </nav>
-      <button class="cart-btn" data-open-cart aria-label="Ouvrir le panier">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:20px;height:20px"><path d="M5 8h14l-1 13H6z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg>
-        <span>Panier</span>
-        <span class="cart-count">0</span>
-      </button>
+      <div style="display:flex;align-items:center;gap:0.75rem">
+        <button class="nav-toggle" aria-label="Menu" onclick="document.querySelector('.nav').classList.toggle('open')">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+        </button>
+        <button class="cart-btn" data-open-cart aria-label="Ouvrir le panier">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:20px;height:20px"><path d="M5 8h14l-1 13H6z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg>
+          <span>Panier</span>
+          <span class="cart-count">0</span>
+        </button>
+      </div>
     </div>
   </header>
 
@@ -78,8 +83,8 @@
         <div class="hero-dark" aria-hidden="true"></div>
         <div class="wrap hero-in">
           <span class="eyebrow">Collection Halloween 2026 · Faite main à Cotonou</span>
-          <h1 id="hero-title">Osez le <span class="creep">masque</span>.</h1>
-          <p class="lead">Masques et costumes afro-fantastiques inspirés des contes du soir. Des pièces numérotées pour briller au Réveillon d'Halloween sans craindre d'arriver en retard.</p>
+          <h1 id="hero-title" class="flicker glitch-hover">Révélez votre <span class="creep handwritten typing" id="typing-text">masque</span>.</h1>
+          <p class="lead">Derrière chaque visage se cache un conte inachevé. Nos créations afro-fantastiques ne servent pas à se cacher, mais à libérer votre véritable essence. Soyez mémorable, soyez l'énigme de la nuit.</p>
           <div class="hero-cta">
             <a class="btn btn-acc" href="#/boutique/masques">Trouver mon masque</a>
             <a class="btn btn-ghost" href="#looks">Voir les looks complets</a>
@@ -90,6 +95,10 @@
           </div>
           <p class="hint" aria-hidden="true">💡 Bougez la souris ou touchez l'écran : le halo de lumière vous suit.</p>
         </div>
+        <!-- Bat elements -->
+        <div class="bat" style="top:10%; left:-10%"><svg viewBox="0 0 24 24" width="40" height="40" fill="currentColor"><path d="M12 4.5C11 4.5 9 3 7 3C5 3 2 5 2 5C2 5 3 7 3 10C3 13 5 15 8 15C10 15 11 14 12 13C13 14 14 15 16 15C19 15 21 13 21 10C21 7 22 5 22 5C22 5 19 3 17 3C15 3 13 4.5 12 4.5Z"/></svg></div>
+        <div class="bat" style="top:25%; left:-20%; animation-delay: 4s"><svg viewBox="0 0 24 24" width="30" height="30" fill="currentColor"><path d="M12 4.5C11 4.5 9 3 7 3C5 3 2 5 2 5C2 5 3 7 3 10C3 13 5 15 8 15C10 15 11 14 12 13C13 14 14 15 16 15C19 15 21 13 21 10C21 7 22 5 22 5C22 5 19 3 17 3C15 3 13 4.5 12 4.5Z"/></svg></div>
+        <div class="bat" style="top:40%; left:-15%; animation-delay: 8s"><svg viewBox="0 0 24 24" width="35" height="35" fill="currentColor"><path d="M12 4.5C11 4.5 9 3 7 3C5 3 2 5 2 5C2 5 3 7 3 10C3 13 5 15 8 15C10 15 11 14 12 13C13 14 14 15 16 15C19 15 21 13 21 10C21 7 22 5 22 5C22 5 19 3 17 3C15 3 13 4.5 12 4.5Z"/></svg></div>
       </section>
 
       <!-- Trust Badges -->
@@ -134,7 +143,7 @@
           <div class="sec-h">
             <div>
               <span class="eyebrow">Packs économiques</span>
-              <h2>Tout le personnage, <em>moins cher</em></h2>
+              <h2>Tout le personnage, <span class="drawn-underline">moins cher</span></h2>
             </div>
             <p class="muted" style="max-width:42ch;margin:0">Masque, cape ou maquillage FX déjà parfaitement coordonnés. Vous n'avez plus qu'à sortir.</p>
           </div>
@@ -181,25 +190,29 @@
 
           <!-- Interactive Mask Recommender Quiz -->
           <div class="quiz-box">
-            <span class="eyebrow">Aide au choix rapide (30 secondes)</span>
-            <h3 style="font-size:1.6rem;margin:0.3rem 0 0.6rem">Quel personnage est fait pour vous ce 31 octobre ?</h3>
-            <p class="muted" style="font-size:0.95rem">Cliquez sur votre style de soirée pour obtenir la recommandation sur-mesure :</p>
+            <span class="eyebrow">Le Miroir de l'Âme (30 secondes)</span>
+            <h3 style="font-size:1.6rem;margin:0.3rem 0 0.6rem">Quel archétype sommeille en vous ?</h3>
+            <p class="muted" style="font-size:0.95rem">Laissez votre intuition guider votre choix pour découvrir la parure qui vous est destinée :</p>
             <div class="quiz-options">
               <button class="quiz-opt" data-quiz-val="masque-mamiwata">
-                🌊 <b>Reine de la nuit</b><br>
-                <span style="font-size:0.8rem;color:var(--muted)">Écailles dorées, mystère et glamour</span>
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align:middle;margin-right:8px"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                <b>Souverain des Abysses</b><br>
+                <span style="font-size:0.8rem;color:var(--muted)">Pour ceux qui règnent par le mystère et la grâce.</span>
               </button>
               <button class="quiz-opt" data-quiz-val="masque-foret">
-                🌿 <b>Esprit ancien</b><br>
-                <span style="font-size:0.8rem;color:var(--muted)">Bois, raphia naturel et contes du soir</span>
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align:middle;margin-right:8px"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                <b>Gardien des Murmures</b><br>
+                <span style="font-size:0.8rem;color:var(--muted)">Pour les esprits liés aux racines et aux contes oubliés.</span>
               </button>
               <button class="quiz-opt" data-quiz-val="cape-indigo">
-                🔮 <b>Ombre majestueuse</b><br>
-                <span style="font-size:0.8rem;color:var(--muted)">Cape indigo, capuche et élégance sobre</span>
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align:middle;margin-right:8px"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                <b>Ombre Solennelle</b><br>
+                <span style="font-size:0.8rem;color:var(--muted)">Pour une présence qui impose le silence sans un mot.</span>
               </button>
               <button class="quiz-opt" data-quiz-val="kit-fx">
-                🎨 <b>Créateur de métamorphose</b><br>
-                <span style="font-size:0.8rem;color:var(--muted)">Maquillage FX, cicatrices et faux sang</span>
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align:middle;margin-right:8px"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                <b>L'Artiste de l'Illusion</b><br>
+                <span style="font-size:0.8rem;color:var(--muted)">Pour transformer votre peau en œuvre d'art vivant.</span>
               </button>
             </div>
           </div>
@@ -242,8 +255,11 @@
 
             <!-- Delivery Estimator Widget -->
             <div class="deliv-card">
-              <span class="eyebrow" style="font-size:0.75rem">Calculateur de livraison locale</span>
-              <label for="deliv-quartier-select" style="font-weight:700;display:block;font-size:0.95rem;margin-top:0.2rem">Estimer le délai dans votre quartier :</label>
+              <span class="eyebrow" style="font-size:0.75rem">Logistique de la Nuit</span>
+              <label for="deliv-quartier-select" style="font-weight:700;display:block;font-size:0.95rem;margin-top:0.2rem">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align:middle;margin-right:4px"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                Où devons-nous porter votre parure ?
+              </label>
               <select id="deliv-quartier-select" class="deliv-select">
                 <option value="Haie Vive">Cotonou – Haie Vive / Cocotiers</option>
                 <option value="Akpakpa">Cotonou – Akpakpa / PK10</option>

@@ -87,6 +87,27 @@ p:last-child { margin-bottom: 0; }
   border-bottom: 1px solid var(--line);
 }
 .hdr .wrap { display: flex; align-items: center; justify-content: space-between; min-height: 68px; gap: 1.5rem; }
+
+/* Hamburger Nav for Mobile */
+.nav-toggle { 
+  display: none; background: rgba(255,255,255,0.05); border: 1px solid var(--line); 
+  padding: 0.5rem; color: var(--fg); cursor: pointer; border-radius: 8px;
+}
+@media (max-width: 768px) {
+  .nav-toggle { display: flex; align-items: center; justify-content: center; }
+  .nav { 
+    display: none; position: absolute; top: 68px; left: 0; right: 0; 
+    background: rgba(13, 13, 13, 0.98); flex-direction: column; padding: 2rem; border-bottom: 1px solid var(--line); 
+    align-items: center; gap: 1.5rem; z-index: 100;
+  }
+  .nav.open { display: flex; animation: slideDown 0.3s ease-out; }
+}
+
+@keyframes slideDown {
+  from { transform: translateY(-10px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
 .logo { display: flex; align-items: center; gap: 0.6rem; font-family: var(--fd); font-weight: 800; font-size: 1.25rem; }
 .logo svg { width: 34px; height: 34px; flex-shrink: 0; }
 .nav { display: flex; gap: 1.6rem; align-items: center; }
@@ -123,9 +144,21 @@ p:last-child { margin-bottom: 0; }
 .cart-count.bump { animation: bump 0.35s cubic-bezier(0.16, 1, 0.3, 1); }
 @keyframes bump { 50% { transform: scale(1.35); } }
 
-@media (max-width: 768px) {
-  .nav { display: none; }
-  .logo { font-size: 1.1rem; }
+/* Typing Effect */
+.typing { border-right: 2px solid var(--acc); white-space: nowrap; overflow: hidden; animation: blink 0.75s step-end infinite; }
+@keyframes blink { 50% { border-color: transparent; } }
+
+/* Bat Animation */
+.bat { position: absolute; pointer-events: none; z-index: 100; color: var(--fg); width: 40px; animation: fly 12s linear infinite; }
+.bat svg { animation: flap 0.4s ease-in-out infinite alternate; transform-origin: center; }
+@keyframes fly {
+  0% { transform: translate(-120vw, 20vh) scale(0.4) rotate(10deg); }
+  50% { transform: translate(50vw, 10vh) scale(0.8) rotate(-5deg); }
+  100% { transform: translate(120vw, 30vh) scale(0.4) rotate(15deg); }
+}
+@keyframes flap {
+  from { transform: scaleY(1); }
+  to { transform: scaleY(0.3); }
 }
 
 /* Buttons */
@@ -437,6 +470,48 @@ p:last-child { margin-bottom: 0; }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; }
   .rv { opacity: 1 !important; transform: none !important; }
+}
+
+/* Flicker effect - subtil pour les titres */
+@keyframes flicker {
+  0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% { opacity: 1; }
+  20%, 22%, 24%, 55% { opacity: 0.85; }
+}
+.flicker { animation: flicker 4s infinite; }
+
+/* Glitch hover pour les titres */
+.glitch-hover { transition: text-shadow 0.2s, letter-spacing 0.2s; }
+.glitch-hover:hover {
+  text-shadow: 2px 0 var(--acc), -2px 0 var(--sec-light);
+  letter-spacing: 0.05em;
+}
+
+/* Subtle web border effect */
+.card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle at 100% 0%, rgba(255,117,24,0.08) 1px, transparent 1px);
+  background-size: 25px 25px;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.4s;
+}
+.card:hover::after { opacity: 1; }
+
+/* Micro Handwriting & Sketched effects */
+.handwritten { font-family: 'Caveat', cursive; font-size: 1.2em; line-height: 1; }
+.drawn-underline {
+  position: relative;
+  display: inline-block;
+}
+.drawn-underline::after {
+  content: '';
+  position: absolute;
+  left: 0; bottom: -4px; width: 100%; height: 6px;
+  border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+  border: 1.5px solid var(--acc);
+  transform: rotate(-1deg);
 }
 
 /* Footer */

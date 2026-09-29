@@ -733,9 +733,36 @@
   // Expose global Q4 helper
   window.Q4 = { fcfa, pct, esc, P, toast, addToCart, openCart, openModal };
 
+  // Hamburger Menu handling
+  const nav = $('.nav');
+  const navToggle = $('.nav-toggle');
+  if (nav && navToggle) {
+    nav.addEventListener('click', e => {
+      if (e.target.tagName === 'A') nav.classList.remove('open');
+    });
+  }
+
+  // Typewriter Effect
+  function typeWriter(element, text, speed = 100) {
+    let i = 0;
+    element.textContent = "";
+    function type() {
+      if (i < text.length) {
+        element.textContent += text.charAt(i);
+        i++;
+        setTimeout(type, speed);
+      }
+    }
+    type();
+  }
+
   // Init
   window.addEventListener('hashchange', route);
   initHeroFlashlight();
+  
+  const typingEl = $('#typing-text');
+  if (typingEl) typeWriter(typingEl, "masque", 150);
+
   tickCountdown();
   setInterval(tickCountdown, 1000);
   renderCart();
