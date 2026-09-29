@@ -28,6 +28,7 @@
     chevronRight: `<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>`,
     ruler: `<svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon" aria-hidden="true"><path d="m21.73 2.27-8.35 8.35a6.002 6.002 0 0 0-8.23 8.23l-3.15 3.15 1.42 1.42 3.15-3.15a6 6 0 0 0 8.23-8.23l8.35-8.35a1.5 1.5 0 0 0-2.12-2.12z"/></svg>`,
     sparkles: `<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>`,
+    eye: `<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon" aria-hidden="true"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>`,
     // Categories
     catAll: `<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon" aria-hidden="true"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>`,
     catMasques: `<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon" aria-hidden="true"><path d="M2 10c1.5-4 5-6 10-6s8.5 2 10 6c-.5 6-4 10-10 10S2.5 16 2 10Z"/><circle cx="8" cy="11" r="2"/><circle cx="16" cy="11" r="2"/></svg>`,
@@ -421,6 +422,32 @@
         <div class="card-media">
           ${badgeText ? `<span class="card-badge">${ICONS.tag} <span>${esc(badgeText)}</span></span>` : ''}
           <img src="${img}" alt="${esc(p.name)}" loading="lazy" width="400" height="400">
+
+          <!-- Mobile Quick Preview Trigger Button -->
+          <button class="card-preview-btn" data-preview="${p.id}" aria-label="Aperçu rapide de ${esc(p.name)}" title="Aperçu rapide">
+            ${ICONS.eye} <span>Aperçu rapide</span>
+          </button>
+
+          <!-- Hover Preview Tooltip with Essential Details -->
+          <div class="card-tooltip" role="tooltip" aria-hidden="true">
+            <div class="tooltip-header">
+              <span class="tooltip-cat">${ICONS.sparkles} ${esc(p.catLabel || p.cat)}</span>
+              <span class="tooltip-stock ${p.stock && p.stock <= 5 ? 'warn' : ''}">
+                ${ICONS.truck} ${p.stock && p.stock <= 5 ? `Plus que ${p.stock}` : 'En stock'}
+              </span>
+            </div>
+            <p class="tooltip-short">${esc(p.short)}</p>
+            ${p.details && p.details.length ? `
+              <ul class="tooltip-specs">
+                ${p.details.slice(0, 3).map(spec => `<li>${ICONS.check} <span>${esc(spec)}</span></li>`).join('')}
+              </ul>
+            ` : ''}
+            <div class="tooltip-footer">
+              <a href="#/produit/${p.id}" class="tooltip-link">
+                <span>Détails complets</span> ${ICONS.chevronRight}
+              </a>
+            </div>
+          </div>
         </div>
         <div class="card-body">
           <span class="card-meta">${esc(p.catLabel || p.cat)} · Cotonou</span>
@@ -655,6 +682,51 @@
     }
     if (e.target.closest('#mobile-nav-close') || e.target.closest('#mobile-nav-backdrop') || e.target.closest('.mobile-nav-link')) {
       closeMobileNav();
+    }
+
+    // Quick Preview Click (Mobile or Direct Click)
+    const prevBtn = e.target.closest('[data-preview]');
+    if (prevBtn) {
+      e.preventDefault();
+      e.stopPropagation();
+      const p = P[prevBtn.dataset.preview];
+      if (p) {
+        const d = p.was ? pct(p.was, p.price) : 0;
+        openModal(`
+          <span class="eyebrow">${ICONS.sparkles} ${esc(p.catLabel || p.cat)} · Fait main à Cotonou</span>
+          <h2 style="font-size:1.75rem;margin:0.3rem 0 0.5rem">${esc(p.name)}</h2>
+          <div style="display:flex;align-items:center;gap:0.6rem;margin-bottom:0.8rem">
+            ${renderStars(p.rating, `${p.reviews} avis vérifiés`)}
+          </div>
+          <div style="display:grid;grid-template-columns:130px 1fr;gap:1.2rem;align-items:start;margin:1rem 0">
+            <img src="${p.combo ? P[p.combo[0]].img : p.img}" alt="${esc(p.name)}" style="border-radius:8px;width:100%;aspect-ratio:1;object-fit:cover">
+            <div>
+              <div class="price" style="margin-bottom:0.6rem">
+                <strong style="font-size:1.4rem">${fcfa(p.price)}</strong>
+                ${p.was ? `<s>${fcfa(p.was)}</s> <span class="save-badge">-${d} %</span>` : ''}
+              </div>
+              <p style="color:#DCD4E6;font-size:0.92rem;line-height:1.5">${esc(p.short)}</p>
+            </div>
+          </div>
+          ${p.details && p.details.length ? `
+            <div style="background:#0D0D0D;border:1px solid var(--line);border-radius:8px;padding:0.9rem;margin:1rem 0">
+              <b style="font-size:0.82rem;color:var(--muted);display:block;margin-bottom:0.45rem;text-transform:uppercase;letter-spacing:0.06em">Détails essentiels :</b>
+              <ul style="list-style:none;padding:0;margin:0;display:grid;gap:0.4rem;font-size:0.88rem;color:var(--fg)">
+                ${p.details.map(det => `<li style="display:flex;align-items:center;gap:0.45rem">${ICONS.check} <span>${esc(det)}</span></li>`).join('')}
+              </ul>
+            </div>
+          ` : ''}
+          <div style="display:flex;gap:0.6rem;margin-top:1.2rem;flex-wrap:wrap">
+            <button class="btn btn-acc" style="flex:1;min-width:160px;gap:0.4rem" onclick="Q4.addToCart('${p.id}', 1); this.closest('.modal').remove();">
+              ${ICONS.cartAdd} <span>Ajouter au panier</span>
+            </button>
+            <a class="btn btn-ghost" href="#/produit/${p.id}" style="flex:1;min-width:160px;gap:0.4rem" onclick="this.closest('.modal').remove();">
+              <span>Voir la page produit</span> ${ICONS.chevronRight}
+            </a>
+          </div>
+        `);
+      }
+      return;
     }
 
     // Add to cart from cards
